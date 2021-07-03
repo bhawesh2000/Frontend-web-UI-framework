@@ -4,6 +4,8 @@
   "description": "learning git and node basic ",
   "main": "index.html",
   "scripts": {
+    "start": "npm run lite",
+    "lite":"lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,10 @@
   "homepage": "https://github.com/bhawesh2000/git-test#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
   }
 }
