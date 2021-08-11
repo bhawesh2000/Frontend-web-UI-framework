@@ -1,0 +1,48 @@
+.jumbotron{
+    background: rgb(163, 71, 248);
+    color: white;
+    padding: 70px 30px 70px 30;
+}
+.row-content{
+    border-bottom: 1px ridge;
+    padding: 50px 0px 50px 0px ;
+}
+
+.footer{
+    padding: 50px;
+    background-color:rgb(236, 224, 183);
+}
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+body{
+    padding: 50px;
+    z-index: 0;
+
+}
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.carousel{
+    background-color:#512DAB;
+}
+.carousel-item{
+    height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+}
+#carouselButton{
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+}
