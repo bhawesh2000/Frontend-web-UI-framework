@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span>Login</a>
+                        <a id="loginButton"><span class="fa fa-sign-in"></span>Login</a>
                     </span>
                 </div>
 
@@ -48,7 +48,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="modal-title">Login</h3>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" id="closeModal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -67,8 +67,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary btn-sm ml-1" >Sign in</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancel">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1 mr-1">Sign in</button>
 
                             </div>
                         </form>
@@ -80,9 +80,9 @@
         <div id="reserveModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header bg-warning text-white">
+                    <div class="modal-header">
                         <h3 class="modal-title">Reserve Table</h3>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" id="modalclose">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -137,7 +137,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 offset-3">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelModal">Cancel</button>
                                 <button class="btn btn-primary btn-sm ml-1" type="submit">Reserve</button>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                     <img class="img-fluid" src="img/logo.png">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button"  class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                    <a role="button"  class="btn btn-warning btn-sm btn-block"  id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -410,6 +410,8 @@
     <!--Jquery code for single button performing both pause and play operation-->
     <script>
         $(document).ready(function(){
+
+            //jquery for carousel
             $("#mycarousel").carousel({interval:1000});
             $("#carouselButton").click(function(){
                 if($("#carouselButton").children('span').hasClass('fa-pause')){
@@ -423,6 +425,30 @@
                     $("#carouselButton").children('span').addClass('fa-pause');
                 }
             });
+                
+            // jquery for login
+            $("#loginButton").click(function(){
+                $("#loginModal").modal('toggle');
+                $("#loginModal").modal('show');
+                    $("#closeModal").click(function(){
+                        $("#loginModal").modal('hide');
+                    });
+                    $("#cancel").click(function(){
+                        $("#loginModal").modal('hide')
+                    });
+            });
+
+             //jquery for Reserve Table
+             $("#reserveButton").click(function(){
+                 $("#reserveModal").modal('toggle');
+                 $("#reserveModal").modal('show');
+                 $("#modalclose").click(function(){
+                     $("#reserveModal").modal('hide');
+                 });
+                 $("#cancelModal").click(function(){
+                        $("#reserveModal").modal('hide')
+                 });
+             });
         });
     </script>
 

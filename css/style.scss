@@ -1,6 +1,6 @@
 $lt-gray:#ddd;
 $background-dark:#512DAB;
-$background-light:#9575CD;
+$background-light:#8154ce;
 $background-pale:#D1C4E9;
 
 //height variable
@@ -73,3 +73,15 @@ body{
     bottom: 0px;
     position: absolute;
 }
+
+ .modal-header{
+    background: $background-dark;
+    color: floralwhite;
+    .close{
+        color: floralwhite;
+    }
+  }
+  .modal-body{
+      background: $background-pale;
+}
+
