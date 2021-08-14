@@ -4,9 +4,11 @@
   "description": "learning git and node basic ",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "lite": "lite-server",
-    "scss":"node-sass -o css/ css/",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +22,9 @@
   },
   "homepage": "https://github.com/bhawesh2000/git-test#readme",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.1"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
